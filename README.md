@@ -2,6 +2,12 @@
 Fork of Quidrex's DSDeaths project
 https://github.com/Quidrex/DSDeaths
 
+
+
+App Icon (https://icons8.com/icons/set/skull--static) from [icons8.com](https://icons8.com/)
+
+
+
 1. Start a Souls game
    1. WARNING - This may not work and you may risk bans if you use this with Elden Ring while Easy Anti-Cheat (EAC) is running
 2. Load a character

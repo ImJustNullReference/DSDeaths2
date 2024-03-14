@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 
 
 namespace DSDeaths
 {
+    //App Icon (https://icons8.com/icons/set/skull--static) from icons8.com
+
     class Program
     {
         const int PROCESS_WM_READ = 0x0010;
@@ -31,6 +34,40 @@ namespace DSDeaths
             new Game("Sekiro", null, new int[] {0x3D5AAC0, 0x90}),
             new Game("eldenring", null, new int[] {0x3CD4D88, 0x94})
         };
+        private static bool _debugMode;
+
+        static void Main(string[] args)
+        {
+            //Console.CancelKeyPress += delegate {
+            //    Write(0);
+            //};
+            Console.Title = "Souls Death Listener";
+            args.ToList().ForEach(a => 
+            { 
+                if(a.ToLower() == "-debug")
+                    _debugMode = true;
+            });
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("-----------------------------------WARNING-----------------------------------");
+            Console.WriteLine(" Does NOT work with Elden Ring if Easy Anti-Cheat (EAC) is running.");
+            Console.WriteLine(" Possible risk of BANS by trying to use with EAC enabled.");
+            Console.WriteLine(" USE AT YOUR OWN RISK.");
+            Console.WriteLine("-----------------------------------WARNING-----------------------------------");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine();
+            Console.WriteLine("-----------------------------------Original project by Quidrex-----------------------------------");
+            Console.WriteLine("https://github.com/Quidrex/DSDeaths");
+            Console.WriteLine();
+            Console.WriteLine("-----------------------------------Fork by GeekCrunch-----------------------------------");
+            Console.WriteLine();
+            Console.WriteLine("App Icon (https://icons8.com/icons/set/skull--static) from icons8.com");
+            Console.WriteLine("-----------------------------------Fork by GeekCrunch-----------------------------------");
+            Console.WriteLine();
+
+            MainWorker();
+
+        }
 
         static bool Write(int value, string gameName)
         {
@@ -60,7 +97,8 @@ namespace DSDeaths
             {
                 if (address == 0)
                 {
-                    Console.WriteLine("Encountered null pointer.");
+                    if (_debugMode)
+                        Console.WriteLine("Encountered null pointer.");
                     return false;
                 }
 
@@ -68,7 +106,8 @@ namespace DSDeaths
 
                 if (!ReadProcessMemory(handle, (IntPtr)address, buffer, 8, ref discard))
                 {
-                    Console.WriteLine("Could not read game memory.");
+                    if (_debugMode)
+                        Console.WriteLine("Could not read game memory.");
                     return false;
                 }
 
@@ -97,25 +136,8 @@ namespace DSDeaths
             return false;
         }
 
-        static void Main()
+        static void MainWorker()
         {
-            //Console.CancelKeyPress += delegate {
-            //    Write(0);
-            //};
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("-----------------------------------WARNING-----------------------------------");
-            Console.WriteLine(" Does NOT work with Elden Ring if Easy Anti-Cheat (EAC) is running.");
-            Console.WriteLine(" Possible risk of BANS by trying to use with EAC enabled.");
-            Console.WriteLine(" USE AT YOUR OWN RISK.");
-            Console.WriteLine("-----------------------------------WARNING-----------------------------------");
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine();
-            Console.WriteLine("-----------------------------------Original project by Quidrex-----------------------------------");
-            Console.WriteLine("https://github.com/Quidrex/DSDeaths");
-            Console.WriteLine();
-            Console.WriteLine("-----------------------------------Fork by GeekCrunch-----------------------------------");
-            Console.WriteLine();
-
             while (true)
             {
                 //Write(0);
