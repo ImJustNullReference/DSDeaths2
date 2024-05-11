@@ -2,6 +2,7 @@
 ************NOTES/ATTRIBUTIONS***********
 *****************************************
 
+Fork by ImJustNullReference/GeekCrunch
 Fork of Quidrex's DSDeaths project https://github.com/Quidrex/DSDeaths
 App Icon (https://icons8.com/icons/set/skull--static) from icons8.com
 
