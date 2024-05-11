@@ -35,3 +35,7 @@ You may also risk bans with any other support Souls game with an online componen
 Extra goodies:
 
 You can add a source to your OBS scnes that read from the generated TXT file if you want to show your live death counter on a stream or recording! 
+
+
+Pass -debug when starting the EXE as an argument/parameter to show a few debugging related messages in the console.
+By default they will not show.
