@@ -28,14 +28,16 @@ You may also risk bans with any other support Souls game with an online componen
 3 - start this application
 4 - it should find the game process and start listening for deaths
 5 - Deaths will write to a game-specific TXT file that will be created in the same folder as the main EXE
-	5a - This file will be something similar to deaths_{gameName}.txt like deaths_DarkSoulsRemastered.txt, for example.
-6 - You may want to take your own manual backups of the files if you want to track deaths per character. The file will be overwritten with deaths from whatever character you are currently playing in a given Souls game (When playing Dark Souls, this overwrites the Dark Sous file. When playing Dark Souls 2, the Dark Souls 2 file will be overrwritten, etc)
+	5a - This file will be something similar to "deaths_{gameName}.txt" like "deaths_DarkSoulsRemastered.txt", for example.
+6 - You may want to optionally take your own manual backups of the files if you want to track deaths per character. 
+	The file will be overwritten with deaths from whatever character you are currently playing in a given Souls game 
+	(i.e. When playing Dark Souls, this overwrites the Dark Sous file. When playing Dark Souls 2, the Dark Souls 2 file will be overrwritten, etc)
 
 
 Extra goodies:
 
-You can add a source to your OBS scnes that read from the generated TXT file if you want to show your live death counter on a stream or recording! 
+You can add a source to your OBS scenes that read from the generated TXT file if you want to show your live death counter on a stream or recording! 
 
 
-Pass -debug when starting the EXE as an argument/parameter to show a few debugging related messages in the console.
+Pass -debug as an argument/parameter when starting the EXE  to show a few debugging related messages in the console.
 By default they will not show.

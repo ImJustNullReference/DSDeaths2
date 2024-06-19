@@ -50,7 +50,6 @@ namespace DSDeaths
 
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("-----------------------------------WARNING-----------------------------------");
-            Console.WriteLine(" Does NOT work with Elden Ring if Easy Anti-Cheat (EAC) is running.");
             Console.WriteLine(" Possible risk of BANS by trying to use with EAC enabled.");
             Console.WriteLine(" USE AT YOUR OWN RISK.");
             Console.WriteLine("-----------------------------------WARNING-----------------------------------");
@@ -87,9 +86,9 @@ namespace DSDeaths
             return true;
         }
 
-        static bool PeekMemory(in IntPtr handle, in IntPtr baseAddress, bool isX64, in int[] offsets, ref int value)
+        static bool PeekMemory(in IntPtr processHandle, in IntPtr processBaseAddress, bool isX64, in int[] offsets, ref int value)
         {
-            long address = baseAddress.ToInt64();
+            long address = processBaseAddress.ToInt64();
             byte[] buffer = new byte[8];
             int discard = 0;
 
@@ -104,7 +103,7 @@ namespace DSDeaths
 
                 address += offset;
 
-                if (!ReadProcessMemory(handle, (IntPtr)address, buffer, 8, ref discard))
+                if (!ReadProcessMemory(processHandle, (IntPtr)address, buffer, 8, ref discard))
                 {
                     if (_debugMode)
                         Console.WriteLine("Could not read game memory.");
