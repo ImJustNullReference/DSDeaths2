@@ -32,7 +32,7 @@ namespace DSDeaths
             new Game("DarkSoulsIII", null, new int[] {0x47572B8, 0x98}),
             new Game("DarkSoulsRemastered", null, new int[] {0x1C8A530, 0x98}),
             new Game("Sekiro", null, new int[] {0x3D5AAC0, 0x90}),
-            new Game("eldenring", null, new int[] {0x3CD4D88, 0x94})
+            new Game("eldenring", null, new int[] {0x3D5DF58, 0x94})
         };
         private static bool _debugMode;
 
@@ -64,8 +64,22 @@ namespace DSDeaths
             Console.WriteLine("-----------------------------------Fork by GeekCrunch-----------------------------------");
             Console.WriteLine();
 
-            MainWorker();
+            try
+            {
+                MainWorker();
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Whoops! Something went wrong!");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("It is possible an anti-cheat is blocking me! (if one is running)");
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Gray;
+            }
 
+            Console.WriteLine("Press any key to close....");
+            Console.ReadKey();
         }
 
         static bool Write(int value, string gameName)
@@ -140,7 +154,7 @@ namespace DSDeaths
             while (true)
             {
                 //Write(0);
-                Console.WriteLine("Looking for Dark Souls process...");
+                Console.WriteLine("Looking for game process...");
 
                 Process proc = null;
                 Game game = null;
