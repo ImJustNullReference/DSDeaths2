@@ -38,9 +38,6 @@ namespace DSDeaths
 
         static void Main(string[] args)
         {
-            //Console.CancelKeyPress += delegate {
-            //    Write(0);
-            //};
             Console.Title = "Souls Death Listener";
             args.ToList().ForEach(a => 
             { 
@@ -58,10 +55,10 @@ namespace DSDeaths
             Console.WriteLine("-----------------------------------Original project by Quidrex-----------------------------------");
             Console.WriteLine("https://github.com/Quidrex/DSDeaths");
             Console.WriteLine();
-            Console.WriteLine("-----------------------------------Fork by GeekCrunch-----------------------------------");
+            Console.WriteLine("-----------------------------------This version by GeekCrunch/ImJustNullReference-----------------------------------");
             Console.WriteLine();
             Console.WriteLine("App Icon (https://icons8.com/icons/set/skull--static) from icons8.com");
-            Console.WriteLine("-----------------------------------Fork by GeekCrunch-----------------------------------");
+            Console.WriteLine("-----------------------------------This version by GeekCrunch/ImJustNullReference-----------------------------------");
             Console.WriteLine();
 
             try

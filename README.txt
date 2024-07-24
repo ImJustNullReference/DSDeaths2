@@ -2,8 +2,8 @@
 ************NOTES/ATTRIBUTIONS***********
 *****************************************
 
-Fork by ImJustNullReference/GeekCrunch
-Fork of Quidrex's DSDeaths project https://github.com/Quidrex/DSDeaths
+by ImJustNullReference/GeekCrunch
+Based on Quidrex's DSDeaths project https://github.com/Quidrex/DSDeaths
 App Icon (https://icons8.com/icons/set/skull--static) from icons8.com
 
 
@@ -23,7 +23,7 @@ You may also risk bans with any other support Souls game with an online componen
 *****************USAGE*******************
 *****************************************
 
-1 - Start a Souls game
+1 - Start a Souls game (Elden Ring needs to start without EAC running)
 2 - Load a character
 3 - start this application
 4 - it should find the game process and start listening for deaths
