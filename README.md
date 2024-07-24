@@ -1,5 +1,5 @@
 # DSDeaths2
-Fork of Quidrex's DSDeaths project
+Based on Quidrex's DSDeaths project
 https://github.com/Quidrex/DSDeaths
 
 
