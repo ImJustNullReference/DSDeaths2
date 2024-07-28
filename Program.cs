@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 
@@ -38,27 +39,33 @@ namespace DSDeaths
 
         static void Main(string[] args)
         {
-            Console.Title = "Souls Death Listener";
+            var version = typeof(Program).Assembly.GetName().Version;
+            Console.Title = $"Souls Death Listener - {version.Major}.{version.Minor}.{version.Build}.{version.MajorRevision}";
             args.ToList().ForEach(a => 
             { 
                 if(a.ToLower() == "-debug")
                     _debugMode = true;
             });
-
+            Console.WriteLine($"App Version: {version.Major}.{version.Minor}.{version.Build}.{version.MajorRevision}");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("-----------------------------------WARNING-----------------------------------");
             Console.WriteLine(" Possible risk of BANS by trying to use with EAC enabled.");
+            Console.WriteLine(" May not work with EAC enabled.");
             Console.WriteLine(" USE AT YOUR OWN RISK.");
             Console.WriteLine("-----------------------------------WARNING-----------------------------------");
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("-----------------------------------Original project by Quidrex-----------------------------------");
             Console.WriteLine("https://github.com/Quidrex/DSDeaths");
             Console.WriteLine();
-            Console.WriteLine("-----------------------------------This version by GeekCrunch/ImJustNullReference-----------------------------------");
+            Console.WriteLine();
+            Console.WriteLine("--------------------------------This version by GeekCrunch/ImJustNullReference-------------------");
+            Console.WriteLine("https://github.com/ImJustNullReference/DSDeaths2");
+            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("App Icon (https://icons8.com/icons/set/skull--static) from icons8.com");
-            Console.WriteLine("-----------------------------------This version by GeekCrunch/ImJustNullReference-----------------------------------");
+            Console.WriteLine();
             Console.WriteLine();
 
             try
