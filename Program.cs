@@ -33,7 +33,7 @@ namespace DSDeaths
             new Game("DarkSoulsIII", null, new int[] {0x47572B8, 0x98}),
             new Game("DarkSoulsRemastered", null, new int[] {0x1C8A530, 0x98}),
             new Game("Sekiro", null, new int[] {0x3D5AAC0, 0x90}),
-            new Game("eldenring", null, new int[] {0x3D5DF58, 0x94})
+            new Game("eldenring", null, new int[] {0x3D5DF38, 0x94})
         };
         private static bool _debugMode;
 
@@ -46,6 +46,9 @@ namespace DSDeaths
                 if(a.ToLower() == "-debug")
                     _debugMode = true;
             });
+
+            Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
+
             Console.WriteLine($"App Version: {version.Major}.{version.Minor}.{version.Build}.{version.MajorRevision}");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("-----------------------------------WARNING-----------------------------------");
